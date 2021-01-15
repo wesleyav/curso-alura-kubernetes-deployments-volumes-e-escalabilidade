@@ -339,3 +339,9 @@ $ kubectl apply -f .\sistema-noticias-statefulset.yaml
 $ kubectl get pods --watch
 
 #################################################
+
+Para saber mais: Startup Probes
+
+Há um terceiro tipo de probe voltado para aplicações legadas, o Startup Probe. Algumas aplicações legadas exigem tempo adicional para inicializar na primeira vez. Nem sempre Liveness ou Readiness Probes vão conseguir resolver de maneira simples os problemas de inicialização de aplicações legadas. Mais informações sobre Startup Probes podem ser adquiridas por (https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-startup-probes).
+
+#################################################
