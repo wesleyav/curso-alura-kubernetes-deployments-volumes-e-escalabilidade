@@ -149,3 +149,35 @@ $ kubectl rollout history deployment db-noticias-deployment
 # Os dados inseridos sumiram!
 
 #################################################
+
+# Criar arquivo de volume
+# Configurar no docker > resources > file sharing e adicionar a pasta para compartilhamento
+
+# Aplicar o arquivo
+$ kubectl apply -f .\pod-volume.yaml
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Verificar se tudo que está dentro do pod e no container está funcionando de forma correta:
+# kubectl exec -it nomo-do-pod --container nome-do-container -- bash
+$ kubectl exec -it pod-volume --container nginx-container -- bash
+
+$ ls
+$ cd volume-dentro-do-container
+$ touch arquivo.txt
+
+# Verificar se tudo que está dentro do pod e no container está funcionando de forma correta:
+# kubectl exec -it nomo-do-pod --container nome-do-container -- bash
+$ kubectl exec -it pod-volume --container jenkins-container -- bash
+
+$ ls
+$ cd volume-dentro-do-container
+# Será exibido o arquivo.txt criado anteriormente
+$ touch outro-arquivo.txt
+
+# No Windows, acesse a pasta C:\primeiro-volume e serão visualizados os serviços criados
+
+# Esse volume está vinculado diretamente ao pod criado, ou seja, se o pod morrer, o volume também morre, porém, os arquivos continuarão existindo na pasta no desktop físico "C:\primeiro-volume"
+
+#################################################
