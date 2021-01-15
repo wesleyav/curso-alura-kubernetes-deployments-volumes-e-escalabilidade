@@ -360,3 +360,15 @@ $ kubectl get hpa
 $ kubectl describe hpa portal-noticias-hpa
 
 #################################################
+
+# Aplicar o arquivo
+$ kubectl apply -f .\components.yaml
+
+# Visualizar informações do hpa
+$ kubectl get hpa
+
+# Validar o hpa
+# kubectl describe hpa nome-do-hpa
+$ kubectl describe hpa portal-noticias-hpa
+
+#################################################
