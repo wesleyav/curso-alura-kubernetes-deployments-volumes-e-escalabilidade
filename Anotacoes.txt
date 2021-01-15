@@ -28,3 +28,55 @@ $ kubectl delete pod portal-noticias-replicaset-p8564
 # Com isso vemos que o replicaset cria outro pod automaticamente
 
 #################################################
+
+Deployment
+ - camada acima dos replicaset´s
+ - quando se define um deployment, define-se automaticamente um replicaset
+
+
+# Aplicar o arquivo
+$ kubectl apply -f .\nginx-deployment.yaml
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Exibir o número de replicasets
+$ kubectl get replicasets
+
+# Exibir o deployment
+$ kubectl get deployments
+
+# Exibir o status do controle de fluxo do deployment
+# kubectl rollout history deployment nome-do-deployment
+$ kubectl rollout history deployment nginx-deployment
+
+# Aplicar o arquivo e altera o histórico do fluxo do deployment (como git)
+$ kubectl apply -f .\nginx-deployment.yaml --record
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Exibir o status do controle de fluxo do deployment
+# kubectl rollout history deployment nome-do-deployment
+$ kubectl rollout history deployment nginx-deployment
+
+# Definir uma anotação de alteração para exibir no status do controle de fluxo do deployment
+# kubectl annotate deployment nome-do-deployment kubernetes.io/change-cause="mensagem de anotação"
+$ kubectl annotate deployment nginx-deployment kubernetes.io/change-cause="Definindo a imagem com versão latest"
+
+# Exibir o status do controle de fluxo do deployment
+# kubectl rollout history deployment nome-do-deployment
+$ kubectl rollout history deployment nginx-deployment
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Validar o pod
+# kubectl describe pod nome-do-pod 
+$ kubectl describe pod nginx-deployment-6645687878-ctsbw
+
+# Voltar para a versão de uma alteração específica
+# kubectl rollout undo deployment nome-do-deployment --to-revision=2
+$ kubectl rollout undo deployment nginx-deployment --to-revision=2
+
+#################################################
