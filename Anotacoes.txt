@@ -181,3 +181,55 @@ $ touch outro-arquivo.txt
 # Esse volume está vinculado diretamente ao pod criado, ou seja, se o pod morrer, o volume também morre, porém, os arquivos continuarão existindo na pasta no desktop físico "C:\primeiro-volume"
 
 #################################################
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Deletar o replicaset via arquivo
+# kubectl delete -f nome-do-arquivo
+$ kubectl delete -f .\pv.yaml
+
+# Aplicar o arquivo
+$ kubectl apply -f .\pv.yaml
+
+# Listar o pv
+$ kubectl get pv
+
+# Deletar o replicaset via arquivo
+# kubectl delete -f nome-do-arquivo
+$ kubectl delete -f .\pvc.yaml
+
+# Aplicar o arquivo
+$ kubectl apply -f .\pvc.yaml
+
+# Listar o pv
+$ kubectl get pvc
+
+# Aplicar o arquivo
+$ kubectl apply -f .\pod-pv.yaml
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Validar o pod
+# kubectl describe pod nome-do-pod 
+$ kubectl describe pod pod-pv
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Verificar se tudo que está dentro do pod está funcionando de forma correta:
+# kubectl exec -it nomo-do-pod --container nome-do-container -- bash
+$ kubectl exec -it pod-volume pod-pv -- bash
+
+$ ls
+$ touch arquivo-persistent.txt
+$ exit
+
+# Apagar o pod
+$ kubectl delete -f pod-pv.yaml
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+#################################################
