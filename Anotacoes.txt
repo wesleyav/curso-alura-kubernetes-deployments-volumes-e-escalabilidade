@@ -287,3 +287,29 @@ $ kubectl delete deployment sistema-noticias-deployment
 $ kubectl delete pod sistema-noticias-statefulset-0
 
 #################################################
+
+# Aplicar o arquivo
+$ kubectl apply -f .\imagens-pvc.yaml
+
+# Aplicar o arquivo
+$ kubectl apply -f .\sessao-pvc.yaml
+
+# Visualizar informações do pod
+$ kubectl get pvc
+
+# Visualizar informações do pv
+$ kubectl get pv
+
+# Visualizar informações do sc
+$ kubectl get sc
+
+# Apagar o pod
+$ kubectl delete -f .\sistema-noticias-statefulset.yaml
+
+# Aplicar o arquivo
+$ kubectl apply -f .\sistema-noticias-statefulset.yaml
+
+# Acessar no navegador
+# http://localhost:30001/
+
+#################################################
