@@ -313,3 +313,18 @@ $ kubectl apply -f .\sistema-noticias-statefulset.yaml
 # http://localhost:30001/
 
 #################################################
+
+# Aplicar o arquivo
+$ kubectl apply -f .\portal-noticias-deployment.yaml
+
+# Validar o pod
+# kubectl describe pod nome-do-pod 
+$ kubectl describe pod portal-noticias-deployment
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Aplicar o arquivo
+$ kubectl apply -f .\sistema-noticias-statefulset.yaml
+
+#################################################
