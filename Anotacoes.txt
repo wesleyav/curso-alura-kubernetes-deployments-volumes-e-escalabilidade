@@ -372,3 +372,13 @@ $ kubectl get hpa
 $ kubectl describe hpa portal-noticias-hpa
 
 #################################################
+
+Para saber mais: VerticalPodAutoscaler
+
+Além do HorizontalPodAutoscaler, o Kubernetes possui um recurso customizado chamado VerticalPodAutoscaler. O VerticalPodAutoscaler remove a necessidade de definir limites e pedidos por recursos do sistema, como cpu e memória. Quando definido, ele define os consumos de maneira automática baseada na utilização em cada um dos nós, além disso, quanto tem disponível ainda de recurso.
+
+Algumas configurações extras são necessárias para utilizar o VerticalPodAutoscaler. Mais informações podem ser obtidas nesse link (https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler).
+
+Também podemos ver mais informações específicas sobre diferentes Cloud Providers, como o GCP (https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler) e a AWS (https://docs.aws.amazon.com/eks/latest/userguide/vertical-pod-autoscaler.html).
+
+#################################################
