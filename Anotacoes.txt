@@ -328,3 +328,14 @@ $ kubectl get pods
 $ kubectl apply -f .\sistema-noticias-statefulset.yaml
 
 #################################################
+
+# Aplicar o arquivo
+$ kubectl apply -f .\portal-noticias-deployment.yaml
+
+# Aplicar o arquivo
+$ kubectl apply -f .\sistema-noticias-statefulset.yaml
+
+# Visualizar informações do pod em tempo real
+$ kubectl get pods --watch
+
+#################################################
