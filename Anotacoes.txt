@@ -345,3 +345,18 @@ Para saber mais: Startup Probes
 Há um terceiro tipo de probe voltado para aplicações legadas, o Startup Probe. Algumas aplicações legadas exigem tempo adicional para inicializar na primeira vez. Nem sempre Liveness ou Readiness Probes vão conseguir resolver de maneira simples os problemas de inicialização de aplicações legadas. Mais informações sobre Startup Probes podem ser adquiridas por (https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-startup-probes).
 
 #################################################
+
+# Aplicar o arquivo
+$ kubectl apply -f .\portal-noticias-deployment.yaml
+
+# Aplicar o arquivo
+$ kubectl apply -f .\portal-noticias-hpa.yaml
+
+# Visualizar informações do hpa
+$ kubectl get hpa
+
+# Validar o hpa
+# kubectl describe hpa nome-do-hpa
+$ kubectl describe hpa portal-noticias-hpa
+
+#################################################
