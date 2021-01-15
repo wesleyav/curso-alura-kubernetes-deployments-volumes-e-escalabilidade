@@ -269,3 +269,21 @@ $ kubectl delete pvc --all
 $ kubectl delete sc --all
 
 #################################################
+
+# Aplicar o arquivo
+$ kubectl apply -f .\sistema-noticias-statefulset.yaml
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Visualizar deployments
+$ kubectl get deployments
+
+# Deletar o deployment
+# kubectl delete deployment nome-do-deployment
+$ kubectl delete deployment sistema-noticias-deployment
+
+# Apagar o pod
+$ kubectl delete pod sistema-noticias-statefulset-0
+
+#################################################
