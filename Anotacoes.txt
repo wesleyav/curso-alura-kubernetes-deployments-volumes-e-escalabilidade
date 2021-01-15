@@ -1,0 +1,30 @@
+# Continuação do curso Kubernetes: Pods, Services e ConfigMaps
+
+Pod
+ - Caso falhe, é o fim da vida dele, não retorna
+ - Como criar outro para assumir o lugar dele automaticamente?
+
+Replica Set
+ - estrutura que pode encapsular um ou mais pods
+
+# Visualizar informações dos serviços
+$ kubectl get svc
+
+# Aplicar o arquivo
+$ kubectl apply -f .\portal-noticias-replicaset.yaml
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Exibir o número de replicasets
+$ kubectl get replicasets
+
+# Exibir o número de replicasets em tempo real
+$ kubectl get replicasets --watch
+
+# Apagar o pod
+$ kubectl delete pod portal-noticias-replicaset-p8564
+
+# Com isso vemos que o replicaset cria outro pod automaticamente
+
+#################################################
