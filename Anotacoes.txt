@@ -80,3 +80,72 @@ $ kubectl describe pod nginx-deployment-6645687878-ctsbw
 $ kubectl rollout undo deployment nginx-deployment --to-revision=2
 
 #################################################
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Deletar o deployment
+# kubectl delete deployment nome-do-deployment
+$ kubectl delete deployment nginx-deployment
+
+# Deletar o replicaset via arquivo
+# kubectl delete -f nome-do-arquivo
+$ kubectl delete -f .\portal-noticias-replicaset.yaml
+
+# Aplicar o arquivo
+$ kubectl apply -f .\portal-noticias-deployment.yaml
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Exibir o status do controle de fluxo do deployment
+# kubectl rollout history deployment nome-do-deployment
+$ kubectl rollout history deployment portal-noticias-deployment
+
+# Definir uma anotação de alteração para exibir no status do controle de fluxo do deployment
+# kubectl annotate deployment nome-do-deployment kubernetes.io/change-cause="mensagem de anotação"
+$ kubectl annotate deployment portal-noticias-deployment kubernetes.io/change-cause="Criando portal de notícias na versão 1"
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Apagar o pod
+$ kubectl delete pod sistema-noticias
+
+# Aplicar o arquivo
+$ kubectl apply -f .\sistema-noticias-deployment.yaml
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Apagar o pod
+$ kubectl delete pod db-noticias
+
+# Aplicar o arquivo
+$ kubectl apply -f .\db-noticias-deployment.yaml
+
+# Visualizar informações do pod
+$ kubectl get pods
+
+# Definir uma anotação de alteração para exibir no status do controle de fluxo do deployment
+# kubectl annotate deployment nome-do-deployment kubernetes.io/change-cause="mensagem de anotação"
+$ kubectl annotate deployment sistema-noticias-deployment kubernetes.io/change-cause="Subindo o sistema na versão 1"
+
+# Exibir o status do controle de fluxo do deployment
+# kubectl rollout history deployment nome-do-deployment
+$ kubectl rollout history deployment sistema-noticias-deployment
+
+# Definir uma anotação de alteração para exibir no status do controle de fluxo do deployment
+# kubectl annotate deployment nome-do-deployment kubernetes.io/change-cause="mensagem de anotação"
+$ kubectl annotate deployment db-noticias-deployment kubernetes.io/change-cause="Subindo o banco na versão 1"
+
+# Exibir o status do controle de fluxo do deployment
+# kubectl rollout history deployment nome-do-deployment
+$ kubectl rollout history deployment db-noticias-deployment
+
+# Acessar no navegador
+# http://localhost:30001/
+
+# Os dados inseridos sumiram!
+
+#################################################
