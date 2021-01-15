@@ -233,3 +233,9 @@ $ kubectl delete -f pod-pv.yaml
 $ kubectl get pods
 
 #################################################
+
+Para saber mais: Mais informações sobre PersistentVolumes
+
+Como dito, existem diversos tipos de plugins de volumes que podem ser utilizados pelos Cloud Providers, cada um com seu respectivo modo de acesso e nomes. Por exemplo, o GCEPersistentDisk que usamos nos vídeos anteriores, permite apenas a criação de um PersistentVolume em modo de ReadWriteOnce ou ReadOnlyMany. Diversas outras informações sobre plugins de volumes e modos de acesso podem ser conferidas nesse link (https://kubernetes.io/docs/concepts/storage/persistent-volumes/) da documentação oficial.
+
+#################################################
